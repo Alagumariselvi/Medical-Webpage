@@ -5,6 +5,13 @@ import headerIcons from './icons/icons';
 import FloatHeader from './floatHeader';
 function Header()
 {
+     const[wishlist,setWishList]=useState(0);
+const[cart,setCart]=useState("")
+useEffect(()=>
+{
+setWishList(1);
+setCart("3");
+},[])
 return(
     <>
     <div className='header'>
@@ -19,9 +26,9 @@ return(
 Download App</p>
 </div>
 <div className='center'>
-    <div className='overText'>1</div>{getIcon({ iconList: headerIcons,iconName: 'Heart',height:'25px',width:'30px'})}</div>
+    <div className='overText'>{wishlist}</div>{getIcon({ iconList: headerIcons,iconName: 'Heart',height:'25px',width:'30px'})}</div>
 
-<div className='center'><div className='overText'>3</div>{getIcon({ iconList: headerIcons,iconName: 'Cart',height:'25px',width:'30px'})}</div>
+<div className='center'><div className='overText'>{cart}</div>{getIcon({ iconList: headerIcons,iconName: 'Cart',height:'25px',width:'30px'})}</div>
 <div className='center'>{getIcon({ iconList: headerIcons,iconName: 'User',height:'25px',width:'30px'})}</div>
 </div>
 
